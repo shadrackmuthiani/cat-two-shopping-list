@@ -1,0 +1,76 @@
+#include <stdio.h>
+
+int main()
+{
+    int choice, pieces, i=1, print;
+    float total, item;
+    
+    printf("Please choose an item from the list below:\n");
+    printf("1. Maize flour - KES 200.00\n");
+    printf("2. Sugar - KES 150.00\n");
+    printf("3. Cooking oil - KES 400.00\n");
+    printf("4. Lentils - KES 300.00\n");
+    printf("5. Soap - KES 150.00\n");
+    
+    do
+    {
+        printf("Item %d: ", i);
+        scanf("%d", &choice);
+        
+        switch(choice)
+        {
+            case 1:
+                item = 200.00;
+                break;
+            case 2:
+                item = 150.00;
+                break;
+            case 3:
+                item = 400.00;
+                break;
+            case 4:
+                item = 300.00;
+                break;
+            case 5:
+                item = 150.00;
+                break;
+            default:
+                printf("another choice.\n");
+                break;
+        }
+        
+        if(choice>=1 && choice<=5)
+        {
+            printf("Number of pieces: ");
+            scanf("%d", &pieces);
+            total = total + (item*pieces);
+            
+            printf("Do you want to add another item? ");
+            scanf("%d", &choice);
+            i++;
+        }
+        
+    }while(choice==1);
+    
+    printf("Your shopping list:\n");
+    printf("Maize flour - %d - %.2f\n", pieces, item*pieces);
+    printf("Sugar - %d - %.2f\n", pieces, item*pieces);
+    printf("Cooking oil - %d - %.2f\n", pieces, item*pieces);
+    printf("Lentils - %d - %.2f\n", pieces, item*pieces);
+    printf("Soap - %d - %.2f\n", pieces, item*pieces);
+    printf("Total amount: %.2f\n", total);
+    
+    printf("Do you want to print the list? ");
+    scanf("%d", &print);
+    
+    if(print==1)
+    {
+        printf("Your shopping list has been printed.\n");
+    }
+    else
+    { 
+       printf("Your shopping list has not been printed.\n");
+    }
+    
+    return 0;
+}
